@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ng体育 · 持续关注的视野</title>
+  <style>
+    /* 极简留白 · 窄正文 · 干净层级 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #fafbfc;
+      color: #1e2a3a;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.7;
+      padding: 2.5rem 1.25rem;
+    }
+    .page {
+      max-width: 700px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 2.8rem 2.2rem;
+      border-radius: 24px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.02), 0 1px 6px rgba(0,0,0,0.02);
+    }
+    @media (max-width: 520px) {
+      body { padding: 1rem 0.75rem; }
+      .page { padding: 1.8rem 1.2rem; border-radius: 16px; }
+    }
+
+    /* 标题层级 —— 清晰，克制 */
+    h1 {
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.15rem;
+      color: #121926;
+    }
+    .subhead {
+      font-size: 1rem;
+      color: #5b6f87;
+      margin-bottom: 2.2rem;
+      border-bottom: 1px solid #edf0f4;
+      padding-bottom: 1.2rem;
+    }
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin: 2rem 0 0.6rem 0;
+      color: #1a293b;
+      letter-spacing: -0.01em;
+    }
+    p {
+      margin-bottom: 1rem;
+      color: #2c3e50;
+    }
+    .highlight {
+      background: #f4f7fc;
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+      font-weight: 450;
+    }
+
+    /* 卡片式亮点 (柔和边距) */
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.4rem;
+      margin: 1.8rem 0 0.6rem 0;
+    }
+    .feature-item {
+      flex: 1 1 180px;
+      background: #f8faff;
+      padding: 1.2rem 1rem;
+      border-radius: 18px;
+      border: 1px solid #eef3f9;
+      transition: box-shadow 0.2s;
+    }
+    .feature-item:hover {
+      box-shadow: 0 4px 12px rgba(0,20,40,0.04);
+    }
+    .feature-item h3 {
+      font-size: 0.9rem;
+      font-weight: 520;
+      margin-bottom: 0.3rem;
+      color: #0f1d2f;
+    }
+    .feature-item p {
+      font-size: 0.85rem;
+      color: #3f556b;
+      margin-bottom: 0;
+    }
+
+    /* 场景 / 提示 区域 */
+    .use-note {
+      background: #f5f8fe;
+      padding: 1.4rem 1.6rem;
+      border-radius: 20px;
+      margin: 2rem 0 1.6rem 0;
+      border-left: 4px solid #9bb7d4;
+    }
+    .use-note p {
+      margin-bottom: 0.4rem;
+    }
+    .use-note strong {
+      color: #0f1f32;
+      font-weight: 500;
+    }
+
+    .faq-section {
+      margin: 2.4rem 0 0.8rem 0;
+    }
+    .faq-item {
+      border-bottom: 1px solid #e9edf3;
+      padding: 0.9rem 0;
+    }
+    .faq-item:last-child {
+      border-bottom: 0;
+    }
+    .faq-q {
+      font-weight: 500;
+      color: #121f2f;
+      font-size: 0.95rem;
+    }
+    .faq-a {
+      font-size: 0.9rem;
+      color: #3b5169;
+      margin-top: 0.2rem;
+    }
+
+    /* 链接 自然嵌入 · 无动作诱导 */
+    a {
+      color: #1e4976;
+      text-decoration: none;
+      border-bottom: 1px solid #cbdae7;
+      transition: border-color 0.15s;
+    }
+    a:hover {
+      border-bottom-color: #1e4976;
+    }
+
+    .footer-note {
+      margin-top: 2.8rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid #eef1f6;
+      font-size: 0.8rem;
+      color: #6a7f99;
+      text-align: left;
+    }
+    .footer-note a {
+      color: #3b5f85;
+      border-bottom: 0;
+    }
+    .footer-note a:hover {
+      border-bottom: 1px solid #3b5f85;
+    }
+
+    hr {
+      border: 0;
+      border-top: 1px solid #e6ecf3;
+      margin: 1.8rem 0;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <h1>ng体育 · 产品说明</h1>
+  <div class="subhead">再次访问 · 收藏 · 持续关注</div>
+
+  <p>
+    对于经常浏览体育资讯的用户来说，一个稳定且结构清晰的信息源，往往比短期热点更有价值。 
+    <a href="https://zh-c-ngsports.com">ng体育</a> 提供的是围绕赛事、数据与运动文化的聚合视角，不追逐哗众的标题，而是以相对克制的节奏呈现内容。如果你此前已经留意过这个站点，或许会发现它在信息编排上更倾向于长线可读性——这也是我们想向持续关注者传递的第一印象。
+  </p>
+
+  <p>
+    从再次访问的角度看，一个平台的真正可用性，往往体现在「第二次打开」时的体验：导航是否直观、文章列表是否清晰、回看历史内容是否方便。 
+    <span class="highlight">ng体育</span> 在设计上尽量削弱冗余模块，把注意力留给正文和核心数据。收藏夹里若有它的位置，每次重新打开都不会感到突兀。
+  </p>
+
+  <!-- 亮点卡片 -->
+  <h2>内容亮点</h2>
+  <div class="feature-grid">
+    <div class="feature-item">
+      <h3>赛事侧写</h3>
+      <p>不堆砌赛程表，而是选取关键场次做背景、战术与趋势的简短侧写。</p>
+    </div>
+    <div class="feature-item">
+      <h3>数据标记</h3>
+      <p>比分、统计、排位均以简洁方式嵌入，避免过度可视化干扰阅读流。</p>
+    </div>
+    <div class="feature-item">
+      <h3>专栏风格</h3>
+      <p>部分内容带有个人视角，但不越界为情绪引导，适合习惯理性阅读的用户。</p>
+    </div>
+  </div>
+
+  <!-- 使用建议 / 场景 -->
+  <div class="use-note">
+    <p><strong>使用建议 · 持续关注的节奏</strong></p>
+    <p>如果你希望每周固定浏览 1–2 次，可以将其加入浏览器书签或阅读器订阅。该站更新并不密集，但单篇信息密度相对平均，适合碎片时间阅读。相比实时比分站，它更适合作为赛后复盘或背景了解。</p>
+    <p style="margin-top:0.6rem;">对于深度体育爱好者，建议搭配赛事直播或数据平台交叉参考，<a href="https://zh-c-ngsports.com">ng体育</a> 更偏向观点与叙事层面的补充，而非即时工具。</p>
+  </div>
+
+  <!-- FAQ 摘要  -->
+  <h2>常见关注点</h2>
+  <div class="faq-section">
+    <div class="faq-item">
+      <div class="faq-q">内容更新频率如何？</div>
+      <div class="faq-a">通常每周 3–5 篇，围绕当周主要赛事或运动话题，偶尔会有专题系列。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">是否有移动端适配？</div>
+      <div class="faq-a">页面采用自适应布局，手机浏览器直接访问即可正常阅读，无需额外应用。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">之前收藏的内容还能找到吗？</div>
+      <div class="faq-a">站点保持稳定的结构，历史文章通过归档或搜索可以回溯，便于长期关注者查阅。</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <p style="font-size:0.92rem;">
+    如果你正在寻找一个不嘈杂、且能保持一定知识密度的体育内容来源，不妨将 
+    <a href="https://zh-c-ngsports.com">ng体育</a> 放入你的阅读列表。再次访问时，你会发现它在细节上持续做了微调，但整体气质并未变化——这种一致性本身就是一种可信赖的信号。
+  </p>
+
+  <div class="footer-note">
+    <span>产品说明页 · 持续关注建议 · 非官方页面</span>
+  </div>
+
+</div>
+</body>
+</html>
