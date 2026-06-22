@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绿茵场边的故事 · ng体育</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #2d2f33;
+            background-color: #f7f5f0;
+        }
+
+        /* 深色头图 — 故事开篇 */
+        .hero {
+            background: linear-gradient(135deg, #1a1c23 0%, #2a2d37 50%, #1e2029 100%);
+            color: #eae5dc;
+            padding: 5rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -20%;
+            left: -20%;
+            width: 140%;
+            height: 140%;
+            background: radial-gradient(circle at 30% 60%, rgba(210, 180, 140, 0.08), transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero-sub {
+            font-size: 1.1rem;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #b6a88e;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 400;
+            line-height: 1.2;
+            max-width: 800px;
+            margin: 0 auto 1.2rem;
+            color: #f0ebe0;
+        }
+
+        .hero-title span {
+            font-weight: 600;
+            color: #d9c8a8;
+        }
+
+        .hero-desc {
+            font-size: 1.15rem;
+            max-width: 650px;
+            margin: 0 auto;
+            color: #bcb4a6;
+            font-weight: 300;
+        }
+
+        .hero-desc a {
+            color: #e2d3b8;
+            text-decoration: none;
+            border-bottom: 1px dashed #9f8f78;
+            transition: color 0.25s;
+        }
+
+        .hero-desc a:hover {
+            color: #ffdfa8;
+            border-bottom: 1px solid #d9b382;
+        }
+
+        /* 浅色正文区 */
+        .content {
+            max-width: 1100px;
+            margin: -2.5rem auto 3rem;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .intro-card {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 3rem 3.5rem;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.02);
+            margin-bottom: 3rem;
+            border: 1px solid #eae5dc;
+        }
+
+        .intro-card p {
+            font-size: 1.08rem;
+            color: #3a3c42;
+            margin-bottom: 1.4rem;
+            letter-spacing: 0.02em;
+        }
+
+        .intro-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .accent-link {
+            color: #99613a;
+            font-weight: 500;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom 0.2s, color 0.2s;
+        }
+
+        .accent-link:hover {
+            color: #633f26;
+            border-bottom: 2px solid #99613a;
+        }
+
+        /* 特点列表 — 温和卡片式 */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.8rem;
+            margin: 2.5rem 0 2rem;
+        }
+
+        .feature-item {
+            background: #fbfaf7;
+            border-radius: 20px;
+            padding: 1.8rem 1.8rem 2rem;
+            border: 1px solid #e5dfd6;
+            transition: box-shadow 0.3s, transform 0.2s;
+        }
+
+        .feature-item:hover {
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
+            transform: translateY(-3px);
+            border-color: #c9b8a3;
+        }
+
+        .feature-icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.8rem;
+            display: inline-block;
+            color: #8b735b;
+        }
+
+        .feature-item h3 {
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #2c2e36;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.3px;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #5a5e68;
+            line-height: 1.5;
+        }
+
+        .feature-item a {
+            color: #99613a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #dac1ad;
+        }
+
+        .feature-item a:hover {
+            color: #633f26;
+            text-decoration-color: #99613a;
+        }
+
+        /* 温和结尾 */
+        .closing-note {
+            background: #f3efe8;
+            border-radius: 24px;
+            padding: 2.8rem 3rem;
+            margin: 2rem 0 1rem;
+            border-left: 4px solid #c6ac8f;
+        }
+
+        .closing-note p {
+            font-size: 1.06rem;
+            color: #3f3f44;
+            line-height: 1.7;
+            max-width: 780px;
+        }
+
+        .closing-note a {
+            color: #7b5b3d;
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #b9a088;
+        }
+
+        .closing-note a:hover {
+            color: #4a3522;
+            text-decoration-color: #7b5b3d;
+        }
+
+        .faq-mini {
+            margin-top: 2.2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #d9cfc2;
+        }
+
+        .faq-mini details {
+            margin-bottom: 0.8rem;
+            cursor: pointer;
+        }
+
+        .faq-mini summary {
+            font-weight: 500;
+            color: #4a4037;
+            font-size: 1rem;
+            padding: 0.3rem 0;
+        }
+
+        .faq-mini summary::-webkit-details-marker {
+            color: #9e8b78;
+        }
+
+        .faq-mini p {
+            margin: 0.5rem 0 0 1.2rem;
+            font-size: 0.95rem;
+            color: #5e5b55;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ddd6cb;
+            margin: 1.8rem 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem 1rem 3rem;
+            color: #7d7a73;
+            font-size: 0.9rem;
+            max-width: 600px;
+            margin: 0 auto;
+            border-top: 1px solid #e2d9ce;
+        }
+
+        footer a {
+            color: #7b5b3d;
+            text-decoration: none;
+            border-bottom: 1px dotted #b5a28b;
+        }
+
+        footer a:hover {
+            color: #4a3522;
+        }
+
+        @media (max-width: 700px) {
+            .hero {
+                padding: 4rem 1.2rem 3rem;
+                min-height: 50vh;
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .intro-card {
+                padding: 2rem 1.5rem;
+                border-radius: 20px;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+
+            .closing-note {
+                padding: 2rem 1.5rem;
+            }
+
+            .content {
+                padding: 0 1.2rem;
+                margin-top: -1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+
+            .hero-desc {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- 深色头图 · 故事开场短句 -->
+<section class="hero">
+    <div class="hero-sub">— 一个关于草地与风的片段 —</div>
+    <h1 class="hero-title">当脚步落在<span>ng体育</span>的脉络上</h1>
+    <p class="hero-desc">
+        并非所有的故事都需要解说员。有些节奏，只属于跑动时掠过的气流。<br>
+        就像人们谈论 <a href="https://main-ngty.com">ng体育</a>，更多是在谈论一种专注的状态。
+    </p>
+</section>
+
+<!-- 浅色正文区：承接段落、特点列表、温和结尾 -->
+<div class="content">
+
+    <!-- 承接段落 -->
+    <div class="intro-card">
+        <p>体育世界的迷人之处，往往不在比分板上跳动的数字，而在每一次启动前那短暂的屏息。绿茵场、跑道、球网两侧——这些空间里藏着无数细节：草叶倒伏的方向、鞋钉与地面摩擦的声响、汗水蒸发前的一秒。这些细碎的元素叠加起来，就构成了一个完整的、属于运动的世界。</p>
+        <p>很多人第一次接触 <a href="https://main-ngty.com" class="accent-link">ng体育</a>，其实并不是因为某个具体的赛事，而是被一种氛围吸引——那种训练场上重复的节奏、队友之间不用言语的默契，或者仅仅是一个黄昏里独自投篮的声音。这个领域远比想象中宽厚，它容纳初学者的小心翼翼，也容纳老手的内敛自信。</p>
+        <p>或许，体育最核心的主题从来不是对抗，而是与自己身体的和解，以及和一群人的共同呼吸。在 <a href="https://main-ngty.com" class="accent-link">ng体育</a> 所涵盖的范畴里，你能看到这种温和而坚定的力量——它不张扬，但一直在场。</p>
+    </div>
+
+    <!-- 特点列表（卡片式） -->
+    <h2 style="font-weight:400; font-size:1.6rem; color:#383a40; margin-bottom:0.5rem; letter-spacing:1px;">一些值得留意的侧面</h2>
+    <div class="feature-grid">
+        <div class="feature-item">
+            <div class="feature-icon">⚖️</div>
+            <h3>节奏的平衡</h3>
+            <p>无论你是每日训练还是偶尔动一动，找到属于自己的频率远比追赶别人重要。这边的氛围鼓励循序渐进，不鼓吹极端。</p>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">🌱</div>
+            <h3>领域的多元</h3>
+            <p>从团队配合到个人专注，从户外场地到室内空间，<a href="https://main-ngty.com">ng体育</a> 涵盖的场景足够丰富。每个人都能找到自己舒服的一角。</p>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">🔗</div>
+            <h3>信息的朴素</h3>
+            <p>没有花哨的噱头，只有实在的资讯和社区交流。在这里，你可以安静地浏览、了解，或者只是看看最近有什么动态。</p>
+        </div>
+        <div class="feature-item">
+            <div class="feature-icon">🧩</div>
+            <h3>持续的存在</h3>
+            <p>就像球场边的长椅一样可靠。无论是赛事季节还是平常日子，<a href="https://main-ngty.com">ng体育</a> 始终保持更新，却不打扰你的节奏。</p>
+        </div>
+    </div>
+
+    <!-- 温和结尾 + FAQ 摘要 -->
+    <div class="closing-note">
+        <p><strong>故事的最后，往往没有哨声。</strong> 只是某天你忽然意识到，那些和运动相关的习惯已经悄悄变成了生活的一部分。不需要刻意坚持，也不需要向谁证明。如果你好奇这个领域的模样，不妨去 <a href="https://main-ngty.com">ng体育</a> 看看——不是以“用户”的身份，而是以“参与者”的心情。那里没有夸张的标语，只有和你一样，安静热爱着的人。</p>
+        
+        <div class="faq-mini">
+            <hr>
+            <details>
+                <summary>这个平台适合完全零基础的人吗？</summary>
+                <p>是的。很多内容都是从最基础的视角出发，没有预设门槛。你可以慢慢看，慢慢了解。</p>
+            </details>
+            <details>
+                <summary>主要关注哪些运动方向？</summary>
+                <p>覆盖多个主流项目以及一些非竞技类的身体活动，强调多样性而非单一专项。具体可以浏览站点内的分类。</p>
+            </details>
+            <details>
+                <summary>是否需要注册才能浏览？</summary>
+                <p>大部分内容公开可见，部分互动功能可自愿选择参与。没有强制注册的环节。</p>
+            </details>
+        </div>
+    </div>
+
+    <!-- 一个不显眼的提示句子，自然嵌入链接（避免重复） -->
+    <p style="text-align:center; margin:2rem 0 0.5rem; color:#6b665e; font-size:0.95rem;">
+        如果你想更系统地了解，可以从 <a href="https://main-ngty.com" style="color:#7b5b3d; text-decoration:underline; text-underline-offset:3px;">ng体育</a> 的主页开始浏览。
+    </p>
+
+</div>
+
+<footer>
+    脚下有节奏，心中有场地。<br>
+    由一群安静的人维护 · <a href="https://main-ngty.com">ng体育</a>
+</footer>
+
+<!-- 77de059d0569f9ed（仅用于变化，不显示在页面中） -->
+</body>
+</html>
